@@ -16,6 +16,7 @@
         <!-- Butterfly Animation -->
         <div class="butterfly" id="butterfly"></div>
 
+        <!-- Main Card (Hidden after unlock) -->
         <div class="card shadow-lg border-0" id="main-card">
             <div class="card-body text-center p-5">
                 <h1 class="display-4 mb-4 animated-title">Happy Teacher's Day! 🌟</h1>
@@ -75,10 +76,12 @@
     <script>
         // Reveal Surprises Function
         function revealSurprises() {
-            const container = document.getElementById('surprise-container');
-            container.style.display = 'block';
+            const mainCard = document.getElementById('main-card');
+            const surpriseContainer = document.getElementById('surprise-container');
+            mainCard.style.display = 'none'; // Hide the main card
+            surpriseContainer.style.display = 'block';
             setTimeout(() => {
-                container.style.opacity = '1';
+                surpriseContainer.style.opacity = '1';
                 document.getElementById('farhan-card').style.animation = 'slideUp 1s ease-out';
                 document.getElementById('asjad-card').style.animation = 'slideUp 1s ease-out 0.5s';
             }, 50); // Short delay for initial display
